@@ -11,7 +11,6 @@ const routes: Routes = [
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-    canActivate: [AuthGuard]
   }, {
     path: '',
     component: AdminLayoutComponent,
@@ -32,7 +31,7 @@ const routes: Routes = [
     ]
   }, {
     path: '**',
-    redirectTo: 'dashboard'
+    redirectTo: 'dashboard',
   }
 ];
 

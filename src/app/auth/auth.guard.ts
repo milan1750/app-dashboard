@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import {AuthService} from '../auth/auth.service';
+@Injectable()
+export class AuthGuard implements CanActivate {
+  constructor(private _authService: AuthService, private _router: Router) {
+  }
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard implements  {
-  
+  canActivate(): boolean {
+
+
+    if (this._authService.loggedIn()) {
+      return true;
+    } else {
+      this._router.navigate(['/login/required']);
+      return false;
+    }
+  }
 }
