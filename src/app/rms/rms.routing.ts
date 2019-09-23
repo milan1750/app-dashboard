@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { AuthGuard } from '../auth/auth.guard';
+import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from '../layouts/auth-layout/auth-layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    path: 'rms/dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
   }, {
     path: '',
     component: AdminLayoutComponent,
@@ -29,6 +30,9 @@ const routes: Routes = [
         loadChildren: './layouts/auth-layout/auth-layout.module#AuthLayoutModule'
       }
     ]
+  }, {
+    path: '**',
+    redirectTo: 'dashboard',
   }
 ];
 
@@ -43,4 +47,4 @@ const routes: Routes = [
   exports: [
   ],
 })
-export class AppRoutingModule { }
+export class RmsRoutingModule { }

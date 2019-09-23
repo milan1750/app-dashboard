@@ -15,7 +15,7 @@ import { ComponentsModule } from './components/components.module';
 import { TokenInterceptorService } from './token/token-interceptor.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
-
+import {RmsModule} from './rms/rms.module';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -24,7 +24,8 @@ import { AuthGuard } from './auth/auth.guard';
     ComponentsModule,
     NgbModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RmsModule,
   ],
   declarations: [
     AppComponent,
