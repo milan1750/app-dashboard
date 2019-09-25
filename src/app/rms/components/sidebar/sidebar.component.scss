@@ -1,0 +1,20 @@
+.blue, #sidenav-main {
+    background-color: aqua;
+}
+
+.bg-dark a {
+    color: #ffffff;
+}
+
+.bg-dark a:hover {
+    color: #efefef;
+}
+
+.navbar-brand img {
+    max-height: 15px;
+    width: auto;
+}
+
+.bg-dark a.active {
+    color: aqua;
+}

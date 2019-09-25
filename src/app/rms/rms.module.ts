@@ -4,11 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {RmsRoutingModule} from './rms.routing';
 import {RmsComponent} from './rms.component';
 import { RouterModule} from '@angular/router';
-import { AuthLayoutComponent } from '../layouts/auth-layout/auth-layout.component';
-import {ComponentsModule} from '../components/components.module';
+import {ComponentsModule} from './components/components.module';
+import { ReceiptComponent } from './receipt/receipt.component';
 // import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.component';
 @NgModule({
-  declarations: [DashboardComponent, RmsComponent],
+  declarations: [DashboardComponent, RmsComponent, ReceiptComponent],
   imports: [
     CommonModule,
     RmsRoutingModule,
